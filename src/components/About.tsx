@@ -1,21 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Award, MapPin, Calendar } from "lucide-react";
+import { GraduationCap, Award, MapPin, Calendar, ExternalLink } from "lucide-react";
 
+const handleViewCertificate = (link) => {
+  window.open(link, '_blank', 'noopener,noreferrer');
+};
 const About = () => {
   const skills = [
     "Python", "SQL", "OOPS", "Machine Learning", "Generative AI", 
-    "NLP", "Agentic AI", "Deep Learning", "Pandas", "NumPy", 
-    "Scikit-learn", "LangChain", "Hugging Face"
+    "NLP", "Agentic AI", "Deep Learning", "Prompt Engineering", 
+     
   ];
 
   const achievements = [
-    { platform: "LeetCode", achievement: "Solved 400+ Problems", icon: "🏆" },
-    { platform: "CodeChef", achievement: "Solved 200+ Problems", icon: "🥇" },
+    { platform: "LeetCode", achievement: "Solved 60+ Problems", icon: "🏆" },
+    { platform: "CodeChef", achievement: "Solved 25+ Problems", icon: "🥇" },
     { platform: "HackerRank", achievement: "Achieved Silver in Python", icon: "🥈" },
     { platform: "Project Expo", achievement: "Secured 1st Place with Rs.2000 Cash Prize", icon: "🏅" },
-    { platform: "Rest Hackathon", achievement: "Cleared 2 rounds among 50 teams", icon: "💻" }
+    { platform: "Rev Hack 23", achievement: "Cleared 2 rounds among 50 teams", icon: "💻" }
+
   ];
+
+  
 
   return (
     <section id="about" className="py-20 bg-background">
@@ -24,7 +30,7 @@ const About = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-mono mb-4">
-              <span className="text-primary">{"<"}</span>
+              <span className="text-primary">{"< "}</span>
               About Me
               <span className="text-primary">{" />"}</span>
             </h2>
@@ -42,14 +48,14 @@ const About = () => {
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-primary">B.TECH (AI&DS)</h4>
-                      <p className="text-muted-foreground">Sri Ramakrishna College of Engineering</p>
+                      <h4 className="font-semibold text-primary">B.TECH (Artificial Intelligence & Data Science)</h4>
+                      <p className="text-muted-foreground">Sri Eshwar College of Engineering</p>
                       <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
                           2022-2026
                         </span>
-                        <span>CGPA: 7.38/10 (SEM)</span>
+                        <span>CGPA: 7.7/10 (SEM 5)</span>
                       </div>
                     </div>
                     <div>
@@ -86,19 +92,29 @@ const About = () => {
                   </div>
                   <div className="space-y-3">
                     {[
-                      { name: "C Programming", provider: "Udemy", year: "2023" },
-                      { name: "Crash Course on Python", provider: "Coursera", year: "2023" },
-                      { name: "Machine Learning Data Structures in C and C++", provider: "Udemy", year: "2023" },
-                      { name: "Supervised Machine Learning: Regression and Classification", provider: "Coursera", year: "2024" }
+                      { name: "C Programming", provider: "Udemy", year: "2023",link: "https://drive.google.com/file/d/1a13exhcuZw7xGzc7sJXNg3oREonBJuW5/view?usp=sharing"},
+                      { name: "Crash Course on Python", provider: "Coursera", year: "2023",link: "https://coursera.org/share/20e7ce11b86b7b35b7b1007339f99751" },
+                      { name: "Data Structures and Algorithms using C & C++", provider: "Udemy", year: "2023",link: "https://drive.google.com/file/d/1KE2xK9nYLjBsPV_quHowkH92wPWbjgdP/view?usp=sharing" },
+                      { name: "Supervised Machine Learning: Regression and Classification", provider: "Coursera", year: "2024",link: "https://coursera.org/share/46e436e140827d6cdf20b5c75c6ea932"},
+                      { name: "Advanced Learning", provider: "Coursera", year: "2025",link: "https://coursera.org/share/d9266f3e7c01a8bad51922c20cd9c05a" }
                     ].map((cert, index) => (
                       <div key={index} className="flex justify-between items-center py-2 border-b border-primary/10 last:border-b-0">
                         <div>
                           <p className="font-medium">{cert.name}</p>
                           <p className="text-sm text-muted-foreground">{cert.provider}</p>
                         </div>
-                        <Badge variant="outline" className="border-primary/30 text-primary">
-                          {cert.year}
-                        </Badge>
+                        <div className="flex items-center gap-3">
+                          <Badge variant="outline" className="border-primary/30 text-primary">
+                            {cert.year}
+                          </Badge>
+                          <button
+                            onClick={() => handleViewCertificate(cert.link)}
+                            className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-md border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                          >
+                            <ExternalLink className="h-3 w-3 mr-1" />
+                            View
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -156,17 +172,17 @@ const About = () => {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <MapPin className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">Coimbatore, Tamil Nadu</span>
+                      <span className="text-muted-foreground">Coimbatore,Tamil Nadu</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-primary font-mono">📧</span>
                       <a href="mailto:kamalganth2004@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        kamalganth2004@gmail.com
+                        kamalganths2004@gmail.com
                       </a>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-primary font-mono">📱</span>
-                      <span className="text-muted-foreground">9445171305</span>
+                      <span className="text-muted-foreground">+91 9445171305</span>
                     </div>
                   </div>
                 </CardContent>

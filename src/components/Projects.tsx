@@ -184,7 +184,7 @@ const Projects = () => {
                   size="lg" 
                   className="bg-background text-foreground hover:bg-background/90 font-mono font-medium"
                 >
-                  Get In Touch
+                  Scroll Down to Connect !
                 </Button>
               </CardContent>
             </Card>
