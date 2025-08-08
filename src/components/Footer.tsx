@@ -34,7 +34,7 @@ const Footer = () => {
                 <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Contact
                 </a>
-                <a href="mailto:kamalganth2004@gmail.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   Email
                 </a>
               </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                   <Linkedin className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 </a>
                 <a 
-                  href="mailto:kamalganth2004@gmail.com" 
+                  href="#contact" 
                   className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
                   aria-label="Email"
                 >

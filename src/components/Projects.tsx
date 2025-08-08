@@ -32,10 +32,10 @@ const Projects = () => {
   ];
 
   const internship = {
-    company: "Tech Stack, Python, LangChain, Streamlit",
-    position: "Teck Stack Python LangChain Streamlit Hugging-Face",
-    period: "Recent",
-    description: "Worked with cutting-edge AI technologies including Python, LangChain, Streamlit, and Hugging Face models to build innovative AI solutions."
+    company: "Success Framework Forger (SForger) – Remote, Poland",
+    position: "AI/Automation Engineer Core Contributor (Volunteer)",
+    period: "Current",
+    description: "Contributed to building AI-driven automation, Agentic AI, and NLP solutions while managing code repositories and workflows in compliance with GDPR. Collaborated on strategic planning and technical documentation during SForger’s early-stage growth."
   };
 
   return (
@@ -66,7 +66,7 @@ const Projects = () => {
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle className="text-xl font-mono text-primary">
-                      Tech Stack Intern
+                      AI/Automation Engineer Core Contributor   
                     </CardTitle>
                     <p className="text-muted-foreground">{internship.company}</p>
                   </div>
@@ -80,7 +80,7 @@ const Projects = () => {
                   {internship.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["Python", "LangChain", "Streamlit", "Hugging Face", "AI/ML"].map((tech, index) => (
+                  {["Python", "Agentis AI", "NLP", "AI/ML"].map((tech, index) => (
                     <Badge 
                       key={index} 
                       variant="secondary" 

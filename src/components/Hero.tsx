@@ -22,7 +22,7 @@ const Hero = () => {
             </h1>
             <div className="h-1 w-32 bg-gradient-primary mx-auto mb-6 rounded-full shadow-glow"></div>
             <p className="text-xl md:text-2xl text-muted-foreground font-mono">
-              AI & Data Science Engineer
+              AI  Engineer
             </p>
           </div>
 
@@ -31,7 +31,8 @@ const Hero = () => {
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
               Specializing in <span className="text-primary font-semibold">Machine Learning</span>, 
               <span className="text-primary font-semibold"> Generative AI</span>, and 
-              <span className="text-primary font-semibold"> Deep Learning</span>. 
+              <span className="text-primary font-semibold"> Deep Learning</span>,
+              <span className="text-primary font-semibold"> Agentic AI</span>. 
               Building intelligent solutions that transform data into insights.
             </p>
           </div>
