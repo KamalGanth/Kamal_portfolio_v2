@@ -39,6 +39,7 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="#contact" >
             <Button 
               variant="default" 
               size="lg" 
@@ -47,10 +48,12 @@ const Hero = () => {
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
             </Button>
+            </a>
             <Button 
               variant="outline" 
               size="lg" 
               className="border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-all duration-300 font-mono font-medium"
+              onClick={() => window.open('https://drive.google.com/file/d/1sfdyu3w8xemefn6LTgQhrs3dkYWgamAp/view?usp=sharing', '_blank')}
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
@@ -60,21 +63,21 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/KamalGanth" 
               className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
               aria-label="GitHub"
             >
               <Github className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="www.linkedin.com/in/kamalganth-s-794454245" 
               className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
             </a>
             <a 
-              href="mailto:kamalganth2004@gmail.com" 
+              href="mailto:kamalganths2004@gmail.com" 
               className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
               aria-label="Email"
             >

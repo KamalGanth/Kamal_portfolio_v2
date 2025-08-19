@@ -4,6 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 
+
+import { useState } from "react";
+import emailjs from "emailjs-com";  
+
 const Contact = () => {
   const contactInfo = [
     {
@@ -30,16 +34,39 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/KamalGanth",
       color: "hover:text-gray-300"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "www.linkedin.com/in/kamalganth-s-794454245",
       color: "hover:text-blue-400"
     }
   ];
+
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  emailjs
+    .send(
+      "service_uhxbe3k",   // from EmailJS dashboard
+      "template_bieag5e",  // from EmailJS dashboard
+      form,
+      "t2sopvbU5tf1i9Ram"    // from EmailJS dashboard
+    )
+    .then(() => {
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", subject: "", message: "" }); // reset form
+    })
+    .catch((err) => alert("Failed to send: " + err.text));
+};
 
   return (
     <section id="contact" className="py-20 bg-background">
@@ -128,7 +155,7 @@ const Contact = () => {
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <p className="text-2xl font-bold text-primary-foreground">400+</p>
+                      <p className="text-2xl font-bold text-primary-foreground">60+</p>
                       <p className="text-sm text-primary-foreground/80">LeetCode Problems</p>
                     </div>
                     <div className="text-center">
@@ -136,11 +163,11 @@ const Contact = () => {
                       <p className="text-sm text-primary-foreground/80">Major Projects</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-2xl font-bold text-primary-foreground">4+</p>
+                      <p className="text-2xl font-bold text-primary-foreground">5+</p>
                       <p className="text-sm text-primary-foreground/80">Certifications</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-2xl font-bold text-primary-foreground">200+</p>
+                      <p className="text-2xl font-bold text-primary-foreground">25+</p>
                       <p className="text-sm text-primary-foreground/80">CodeChef Problems</p>
                     </div>
                   </div>
@@ -155,14 +182,17 @@ const Contact = () => {
                   <span className="text-primary">// </span>
                   Send Message
                 </h3>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium text-muted-foreground font-mono mb-2 block">
                         Name
                       </label>
                       <Input 
+                        name="name"
                         placeholder="Your name"
+                        value={form.name}
+                        onChange={handleChange}
                         className="bg-background border-primary/20 focus:border-primary transition-colors"
                       />
                     </div>
@@ -171,7 +201,10 @@ const Contact = () => {
                         Email
                       </label>
                       <Input 
+                        name="email"
                         type="email"
+                        value={form.email}
+                        onChange={handleChange}
                         placeholder="your.email@example.com"
                         className="bg-background border-primary/20 focus:border-primary transition-colors"
                       />
@@ -183,6 +216,9 @@ const Contact = () => {
                       Subject
                     </label>
                     <Input 
+                      name="subject"
+                      value={form.subject}
+                      onChange={handleChange}
                       placeholder="Project collaboration"
                       className="bg-background border-primary/20 focus:border-primary transition-colors"
                     />
@@ -193,9 +229,12 @@ const Contact = () => {
                       Message
                     </label>
                     <Textarea 
-                      placeholder="Tell me about your project or idea..."
-                      rows={6}
-                      className="bg-background border-primary/20 focus:border-primary transition-colors resize-none"
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        placeholder="Tell me about your project or idea..."
+                        rows={6}
+                        className="bg-background border-primary/20 focus:border-primary transition-colors resize-none"
                     />
                   </div>
                   
@@ -215,5 +254,8 @@ const Contact = () => {
     </section>
   );
 };
+
+
+
 
 export default Contact;

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, CoffeeIcon, LucideBrainCircuit, SkullIcon, JapaneseYen, CodeIcon, Code2Icon, LucideMove3D, Brain, CodeXmlIcon } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,21 +45,21 @@ const Footer = () => {
               <h4 className="font-mono font-semibold mb-4 text-primary">Connect</h4>
               <div className="flex justify-center md:justify-end space-x-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/KamalGanth" 
                   className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
                   aria-label="GitHub"
                 >
                   <Github className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="www.linkedin.com/in/kamalganth-s-794454245" 
                   className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 </a>
                 <a 
-                  href="#contact" 
+                  href="mailto:kamalganths2004@gmail.com" 
                   className="p-3 rounded-full border border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
                   aria-label="Email"
                 >
@@ -76,15 +76,15 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <div className="text-muted-foreground text-sm mb-4 md:mb-0">
               <p className="flex items-center justify-center md:justify-start gap-1">
-                © {currentYear} Kamalganth S. Built with 
-                <Heart className="h-4 w-4 text-primary animate-pulse" /> 
-                and lots of coffee.
+                © {currentYear} Kamalganth S - Built with lots of
+                <CoffeeIcon className="h-4 w-4 text-primary animate-pulse" /> 
+                & <Heart className="h-4 w-4 text-primary animate-pulse" />
               </p>
             </div>
             <div className="text-muted-foreground text-sm">
               <p className="font-mono">
                 <span className="text-primary">{"</"}</span>
-                portfolio
+                Don't forget to connect with me on LinkedIn
                 <span className="text-primary">{">"}</span>
               </p>
             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
           {/* Tech Stack Credits */}
           <div className="text-center mt-6 pt-6 border-t border-primary/10">
             <p className="text-xs text-muted-foreground/70 font-mono">
-              Built with React, TypeScript, Tailwind CSS & shadcn/ui
+             Hey all Lets connect and build something amazing together !
             </p>
           </div>
         </div>

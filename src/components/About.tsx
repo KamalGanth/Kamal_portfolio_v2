@@ -176,7 +176,7 @@ const About = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="text-primary font-mono">📧</span>
-                      <a href="mailto:kamalganth2004@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      <a href="mailto:kamalganths2004@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                         kamalganths2004@gmail.com
                       </a>
                     </div>
